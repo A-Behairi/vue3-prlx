@@ -8,7 +8,11 @@
   "types": "./dist/types.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/VuePrlx.js",
+      "import":[
+         "./dist/VuePrlx.js","./dist/index.d.ts",
+         "./dist/plugin.d.ts",
+         "./dist/directive.d.ts"
+        ],
       "require": "./dist/VuePrlx.umd.cjs"
     }
   },

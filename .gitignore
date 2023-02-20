@@ -20,6 +20,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+*.mjs
 
 # files still on development
 rollup.config.js
