@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 
 
 # local env files
@@ -24,5 +23,3 @@ pnpm-debug.log*
 
 # files still on development
 rollup.config.js
-vite.config.ts
-shim-vue.d.ts

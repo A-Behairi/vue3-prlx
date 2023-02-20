@@ -1,6 +1,6 @@
 import { Settings, EL, Modifiers } from "./types"
 export function onUnbind(el:EL) {
-  window.cancelAnimationFrame(el.__prlxRequestAnimationFrameId)
+  window.cancelAnimationFrame(el.__prlxRequestAnimationFrameId as number)
   delete el.__prlxRequestAnimationFrameId
 }
 

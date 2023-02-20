@@ -3,7 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "keywords": ["vite-plugin-vue"],
+  "main": "./dist/VuePrlx.umd.cjs",
+  "module": "./dist/VuePrlx.js",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/VuePrlx.js",
+      "require": "./dist/VuePrlx.umd.cjs"
+    }
+  },
+  "keywords": [
+    "vite-plugin-vue"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -11,6 +22,7 @@
   },
   "dependencies": {
     "rollup-plugin-node-resolve": "^5.2.0",
+    "vite-plugin-dts": "^2.0.0-beta.2",
     "vue": "^3.2.38"
   },
   "devDependencies": {

@@ -1,8 +1,7 @@
 export interface Modifiers {
-    modifiers: Settings,
-    value: any
+    modifiers: Settings;
+    value: any;
 }
-
 export interface Settings {
     mobile?: any;
     background?: any;
@@ -16,4 +15,6 @@ export interface Settings {
     mobileMaxWidth?: any;
     isDisabled?: any;
 }
-export type EL = HTMLElement & { __prlxRequestAnimationFrameId?: number }
+export type EL = HTMLElement & {
+    __prlxRequestAnimationFrameId?: number;
+};
