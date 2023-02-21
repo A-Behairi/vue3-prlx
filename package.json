@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./dist/VuePrlx.umd.cjs",
   "module": "./dist/VuePrlx.js",
-  "types": "./dist/types.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import":[
