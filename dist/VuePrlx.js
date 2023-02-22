@@ -47,20 +47,20 @@ const c = (o, { top: e, height: i } = o.getBoundingClientRect()) => e <= innerHe
   while (o);
   return e;
 }, x = {
-  install(o) {
+  install(o, e) {
     o.directive("prlx", {
-      created: (e, i) => {
-        n(e, i);
+      created: (i, t) => {
+        console.log(e), n(i, t);
       },
-      updated: (e, i) => {
-        n(e, i);
+      updated: (i, t) => {
+        n(i, t);
       },
-      unmounted: (e) => {
-        r(e);
+      unmounted: (i) => {
+        r(i);
       }
     });
   }
 };
 export {
-  x as VPrlx
+  x as VuePrlx
 };
