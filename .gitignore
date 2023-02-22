@@ -22,3 +22,5 @@ pnpm-debug.log*
 *.sw?
 *.mjs
 
+#test
+index2.ts

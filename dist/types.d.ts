@@ -1,4 +1,4 @@
-export interface Options {
+export interface Bindings {
     modifiers: Modifiers;
     value: Values;
 }

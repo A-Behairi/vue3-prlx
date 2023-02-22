@@ -1,5 +1,4 @@
-import type { App } from 'vue';
-export declare const VuePrlx: {
-    install(app: App): void;
-};
-export default VuePrlx;
+import type { Plugin } from 'vue';
+import { Modifiers, Settings, Values } from './types';
+export declare const VPrlx: Plugin;
+export type { Settings, Modifiers, Values };

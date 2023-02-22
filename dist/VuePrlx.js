@@ -22,7 +22,7 @@ function n(o, { modifiers: e = {}, value: i = {} }) {
 }
 function l(o, e) {
   const i = e.startParallaxFromBottom ? window.innerHeight : window.innerHeight / 2;
-  let a = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) - u(o) + i;
+  let a = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) - p(o) + i;
   e.preserveInitialPosition && a < 0 && (a = 0), c(o) && s(o, a, e), o.__prlxRequestAnimationFrameId = window.requestAnimationFrame(l.bind(null, o, e));
 }
 function s(o, e, i) {
@@ -40,13 +40,13 @@ function f(o, e, i) {
 function m(o, e) {
   o.style.setProperty("--parallax-value", e);
 }
-const c = (o, { top: e, height: i } = o.getBoundingClientRect()) => e <= innerHeight && e + i > 0, u = (o) => {
+const c = (o, { top: e, height: i } = o.getBoundingClientRect()) => e <= innerHeight && e + i > 0, p = (o) => {
   let e = 0;
   do
     e += o.offsetTop || 0, o = o.offsetParent;
   while (o);
   return e;
-}, p = {
+}, x = {
   install(o, e) {
     console.log(e), o.directive("prlx", {
       beforeMount: (i, t = { modifiers: {}, value: {} }) => {
@@ -60,12 +60,7 @@ const c = (o, { top: e, height: i } = o.getBoundingClientRect()) => e <= innerHe
       }
     });
   }
-}, b = {
-  install(o) {
-    o.use(p);
-  }
 };
 export {
-  b as VuePrlx,
-  b as default
+  x as VPrlx
 };
