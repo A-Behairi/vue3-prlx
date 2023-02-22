@@ -12,6 +12,9 @@
       "require": "./dist/VuePrlx.umd.cjs"
     }
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "vite-plugin-vue"
   ],
