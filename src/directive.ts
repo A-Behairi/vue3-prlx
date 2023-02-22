@@ -1,12 +1,14 @@
-import {  EL,Bindings,Settings } from "./types"
+import {  EL,Settings } from "./types"
+import type { DirectiveBinding} from 'vue'
+
 export function onUnbind(el:EL) {
   window.cancelAnimationFrame(el.__prlxRequestAnimationFrameId as number)
   delete el.__prlxRequestAnimationFrameId
 }
 
-export function onBind(el: EL, { modifiers = {}, value = {} }: Bindings) {
+export function onBind(el: EL, { modifiers = {}, value = {} }: DirectiveBinding) {
   // SETUP SETTING
-  const settings = {
+  const settings:Settings = {
     // {boolean} – enable parallax on mobile
     isParallaxOnMobile: modifiers.mobile || false,
 
@@ -131,13 +133,13 @@ function parallaxTransform(el: HTMLElement, offset: number, direction: string) {
   el.style.transform = `translate${direction.toUpperCase()}(${Math.round(offset)}px)`
 }
 
-function addParallaxValueAsCssVariable(el: any, offset: any) {
+function addParallaxValueAsCssVariable(el: EL, offset: string) {
   el.style.setProperty('--parallax-value', offset)
 }
 
-const isInViewport = (el: { getBoundingClientRect: () => { top: any; height: any } }, { top: t, height: h } = el.getBoundingClientRect()) => t <= innerHeight && t + h > 0
+const isInViewport = (el: { getBoundingClientRect: () => { top: number; height: number } }, { top: t, height: h } = el.getBoundingClientRect()) => t <= innerHeight && t + h > 0
 
-const offsetTopFromWindow = (element: { offsetTop: any; offsetParent: any }) => {
+const offsetTopFromWindow = (element: { offsetTop: number; offsetParent: any }) => {
   let top = 0
   do {
     top += element.offsetTop || 0

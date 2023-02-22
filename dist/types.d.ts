@@ -1,7 +1,3 @@
-export interface Bindings {
-    modifiers: Modifiers;
-    value: Values;
-}
 export interface Modifiers {
     mobile?: boolean;
     background?: boolean;

@@ -47,16 +47,16 @@ const c = (o, { top: e, height: i } = o.getBoundingClientRect()) => e <= innerHe
   while (o);
   return e;
 }, x = {
-  install(o, e) {
-    console.log(e), o.directive("prlx", {
-      beforeMount: (i, t = { modifiers: {}, value: {} }) => {
-        n(i, t);
+  install(o) {
+    o.directive("prlx", {
+      created: (e, i) => {
+        n(e, i);
       },
-      updated: (i, t = { modifiers: {}, value: {} }) => {
-        n(i, t);
+      updated: (e, i) => {
+        n(e, i);
       },
-      unmounted: (i) => {
-        r(i);
+      unmounted: (e) => {
+        r(e);
       }
     });
   }
