@@ -47,7 +47,7 @@ const c = (o, { top: e, height: i } = o.getBoundingClientRect()) => e <= innerHe
   while (o);
   return e;
 }, p = {
-  install(o, e = {}) {
+  install(o, e) {
     console.log(e), o.directive("prlx", {
       beforeMount: (i, t = { modifiers: {}, value: {} }) => {
         n(i, t);

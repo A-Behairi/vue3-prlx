@@ -1,10 +1,10 @@
-import { Settings, EL, Modifiers } from "./types"
+import {  EL,Options,Settings } from "./types"
 export function onUnbind(el:EL) {
   window.cancelAnimationFrame(el.__prlxRequestAnimationFrameId as number)
   delete el.__prlxRequestAnimationFrameId
 }
 
-export function onBind(el: EL, { modifiers = {}, value = {} }: Modifiers) {
+export function onBind(el: EL, { modifiers = {}, value = {} }: Options) {
   // SETUP SETTING
   const settings = {
     // {boolean} – enable parallax on mobile

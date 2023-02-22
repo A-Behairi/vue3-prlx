@@ -1,15 +1,15 @@
 import type { App,Plugin } from 'vue'
 import { onBind, onUnbind } from './directive';
-import { Modifiers,EL } from './types';
+import { EL, Options } from './types';
 
 export const VPrlx:Plugin = {
-    install(app:App, options={}) {
+    install(app:App, options:Options) {
         console.log(options);
         app.directive('prlx', {
-            beforeMount: (el:EL, binding:Modifiers = { modifiers: {}, value: {} }) => {
+            beforeMount: (el:EL, binding:Options = { modifiers: {}, value: {} }) => {
                 onBind(el, binding)
             },
-            updated: (el:EL, binding:Modifiers = { modifiers: {}, value: {} }) => {
+            updated: (el:EL, binding:Options = { modifiers: {}, value: {} }) => {
                 onBind(el, binding)
             },
             unmounted: (el:EL) => {

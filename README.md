@@ -1,44 +1,7 @@
-# default
+# vue3-prlx
+This is a package created to practice building Vue TypeScript package with Vite.
+### this is the vue 3 version of (https://github.com/gerasimvol/vue-prlx)
 
-## Project setup
+## [Demo and settings](http://vue-prlx.surge.sh)
 
-```
-# yarn
-yarn
 
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
