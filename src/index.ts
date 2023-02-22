@@ -1,8 +1,8 @@
-import type { App,Plugin,DirectiveBinding} from 'vue'
+import type { App,Plugin,DirectiveBinding, Directive} from 'vue'
 import { onBind, onUnbind } from './directive';
-import { EL,Modifiers,Settings,Values } from './types';
+import {Settings,EL } from './types';
 
-export const VPrlx:Plugin = {
+export const VPrlx:Plugin<Directive> = {
     install(app:App) {
         app.directive('prlx', {
             created: (el:EL, binding:DirectiveBinding) => {
@@ -18,4 +18,4 @@ export const VPrlx:Plugin = {
         })
     }
 }
-export type  {Settings,Modifiers,Values}
+export type  {Settings}
