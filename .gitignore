@@ -22,5 +22,3 @@ pnpm-debug.log*
 *.sw?
 *.mjs
 
-# files still on development
-rollup.config.js
