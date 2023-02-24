@@ -62,6 +62,6 @@ const c = (i, { top: e, height: o } = i.getBoundingClientRect()) => e <= innerHe
   }
 };
 export {
-  u as VPrlx,
-  b as VuePrlx
+  b as VuePrlx,
+  u as vPrlx
 };

@@ -1,22 +1,22 @@
-import type { App,Plugin,DirectiveBinding, Directive, ObjectDirective} from 'vue'
+import type { App,Plugin,DirectiveBinding, Directive} from 'vue'
 import { onBind, onUnbind } from './directive';
-import {Settings,EL } from './types';
+import {Values,EL } from './types';
 
-export const VPrlx = {
-    created: (el:EL, binding:DirectiveBinding) => {
+export const vPrlx:Directive = {
+    created: (el:EL, binding:DirectiveBinding<Values>) => {
         onBind(el, binding)
     },
-    updated: (el:EL, binding:DirectiveBinding) => {
+    updated: (el:EL, binding:DirectiveBinding<Values>) => {
         onBind(el, binding)
     },
     unmounted: (el:EL) => {
         onUnbind(el)
     }
-
+    
 }
 export const VuePrlx:Plugin = {
-    install(app:App,options:ObjectDirective) {
-        app.directive('prlx', VPrlx)
+    install(app:App,options) {
+        app.directive('prlx', vPrlx)
     }
 }
-export type  {Settings}
+export type  {Values}
