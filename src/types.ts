@@ -3,6 +3,7 @@ export interface Modifiers {
     background?: boolean;
 }
 export interface Values {
+    horizontal?:boolean
     fromBottom?: boolean;
     custom?: boolean;
     reverse?: boolean;
@@ -19,6 +20,7 @@ export interface Values {
 }
 
 export interface Settings {
+    horizontal?:boolean
     isParallaxOnMobile: boolean
     background: boolean
     startParallaxFromBottom: boolean

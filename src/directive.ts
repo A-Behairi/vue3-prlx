@@ -9,6 +9,8 @@ export function onUnbind(el:EL) {
 export function onBind(el: EL, { modifiers = {}, value = {} }: DirectiveBinding) {
   // SETUP SETTING
   const settings:Settings = {
+    // {boolean} – trigger effect on horizontal scrolling instead of vertical (X)
+    horizontal: modifiers.horizontal||false,
     // {boolean} – enable parallax on mobile
     isParallaxOnMobile: modifiers.mobile || false,
 
@@ -80,6 +82,7 @@ function init(el: EL, settings: Settings) {
     : (window.innerHeight / 2)
 
   const pageYOffset = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
+
   let scrollPosition = pageYOffset - offsetTopFromWindow(el) + startingPoint
 
   // DON'T PARALLAX TO NEGATIVE VALUES (START PARALLAX FROM INITIAL DOM POSITION)

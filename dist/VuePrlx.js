@@ -3,6 +3,7 @@ function r(i) {
 }
 function n(i, { modifiers: e = {}, value: o = {} }) {
   const t = {
+    horizontal: e.horizontal || !1,
     isParallaxOnMobile: e.mobile || !1,
     background: e.background || !1,
     startParallaxFromBottom: o.fromBottom || !1,
