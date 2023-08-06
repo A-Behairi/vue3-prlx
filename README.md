@@ -35,5 +35,4 @@ import { VuePrlxDirective } from 'vue-prlx'
 app.directive('prlx', VuePrlxDirective);
 ```
 
-
 ### ⚙️ [Demo and settings](http://vue-prlx.surge.sh)
