@@ -1,6 +1,6 @@
 # vue3-prlx
-[![npm](https://img.shields.io/npm/v/vue-prlx.svg)](https://www.npmjs.com/package/vue3-prlx)
-[![npm](https://img.shields.io/npm/dt/vue-prlx.svg)](https://www.npmjs.com/package/vue3-prlx)
+[![npm](https://img.shields.io/npm/v/vue3-prlx.svg)](https://www.npmjs.com/package/vue3-prlx)
+[![npm](https://img.shields.io/npm/dt/vue3-prlx.svg)](https://www.npmjs.com/package/vue3-prlx)
 
 This is a package created to practice building Vue TypeScript packages with Vite.
 ### this is the vue 3 version of (https://github.com/gerasimvol/vue-prlx)
