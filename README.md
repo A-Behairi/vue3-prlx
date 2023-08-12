@@ -18,6 +18,7 @@ yarn add vue3-prlx
 ### 🔌 Initialization
 
 ```javascript
+import App from "./App.vue";
 import { createApp } from "vue";
 
 // As a plugin
