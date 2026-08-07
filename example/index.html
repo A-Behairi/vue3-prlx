@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue3-prlx example</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #0f1115;
+        color: #e6e8eb;
+      }
+
+      section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        border-bottom: 1px solid #23262d;
+        padding: 4rem 1rem;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #7d8590;
+      }
+
+      .box {
+        width: 220px;
+        height: 220px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        font-size: 0.875rem;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      }
+
+      .banner {
+        width: min(720px, 90vw);
+        height: 320px;
+        border-radius: 16px;
+        background-image: url('https://picsum.photos/1200/900');
+        background-size: cover;
+      }
+
+      /* `custom` mode only writes --parallax-value; the animation is ours. */
+      .custom {
+        transform: scale(calc(1 + var(--parallax-value, 0) / 600));
+        transition: transform 0.1s ease-out;
+      }
+
+      .hint {
+        margin: 0;
+        color: #7d8590;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <section>
+        <h2>Scroll down</h2>
+        <p class="hint">Directive registered via the VuePrlx plugin.</p>
+      </section>
+
+      <section>
+        <h2>Default (vertical translate)</h2>
+        <div class="box" v-prlx>speed 0.15</div>
+      </section>
+
+      <section>
+        <h2>Faster + reversed</h2>
+        <div class="box" v-prlx="{ speed: 0.4, reverse: true }">speed -0.4</div>
+      </section>
+
+      <section>
+        <h2>Horizontal direction</h2>
+        <div class="box" v-prlx="{ direction: 'x', speed: 0.25 }">direction x</div>
+      </section>
+
+      <section>
+        <h2>Limited offset</h2>
+        <div class="box" v-prlx="{ speed: 0.5, limit: { min: 0, max: 120 } }">max 120px</div>
+      </section>
+
+      <section>
+        <h2>Background position</h2>
+        <div class="banner" v-prlx.background></div>
+      </section>
+
+      <section>
+        <h2>Custom css variable</h2>
+        <div class="box custom" v-prlx="{ custom: true }">scale via var</div>
+      </section>
+
+      <section>
+        <h2>Enabled on mobile</h2>
+        <div class="box" v-prlx.mobile="{ speed: 0.3 }">.mobile modifier</div>
+      </section>
+
+      <section>
+        <h2>Toggle disabled</h2>
+        <div class="box" v-prlx="{ disabled: isDisabled, speed: 0.3 }">
+          {{ isDisabled ? 'disabled' : 'enabled' }}
+        </div>
+        <button @click="isDisabled = !isDisabled">toggle</button>
+      </section>
+
+      <section>
+        <h2>End</h2>
+      </section>
+    </div>
+
+    <script type="module">
+      import { createApp, ref } from 'vue/dist/vue.esm-browser.js';
+      import { VuePrlx } from '../src/index.ts';
+
+      createApp({
+        setup: () => ({ isDisabled: ref(false) }),
+      })
+        .use(VuePrlx)
+        .mount('#app');
+    </script>
+  </body>
+</html>
