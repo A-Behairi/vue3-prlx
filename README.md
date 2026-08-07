@@ -28,9 +28,9 @@ const app = createApp(App)
 app.use(VuePrlx);
 
 // Or as a directive
-import { VuePrlxDirective } from 'vue3-prlx'
+import { vPrlx } from 'vue3-prlx'
 
-app.directive('prlx', VuePrlxDirective);
+app.directive('prlx', vPrlx);
 ```
 
 ### ⚙️ [Demo and settings](http://vue-prlx.surge.sh)

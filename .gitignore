@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-
+dist
 
 # local env files
 .env.local
@@ -22,5 +22,3 @@ pnpm-debug.log*
 *.sw?
 *.mjs
 
-#test
-index2.ts
